@@ -63,25 +63,26 @@
             <a href="privacy.html" class="active">Privacy Policy</a>
             <a href="terms.html">Terms of Use</a>
         </nav>
-
         <h1 class="page-title">Privacy Policy</h1>
-        <p class="last-updated">Last updated: February 13, 2025</p>
-
+        <p class="last-updated">Last updated: February 22, 2026</p>
         <div class="content">
             <p>Infu AI ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you use our mobile application Infu AI (the "App").</p>
 
             <h2>1. Information We Collect</h2>
             <p><strong>Information you provide directly:</strong></p>
             <ul>
-                <li>Account information (email address, username) if you create an account</li>
-                <li>Content you create within the App (AI-generated characters and images)</li>
+                <li>Account information (email address, display name) when you create an account or sign in with Apple</li>
+                <li>Character details you provide during character creation (name, gender, age, appearance attributes such as eye color, hair color, skin tone, body type, and style preferences)</li>
+                <li>Custom prompts and scene descriptions you enter for photo and video generation</li>
+                <li>Content you create within the App (AI-generated characters, images, and videos)</li>
                 <li>Communications when you contact our support team</li>
             </ul>
             <p><strong>Information collected automatically:</strong></p>
             <ul>
                 <li>Device information (device model, operating system version, unique device identifiers)</li>
                 <li>Usage data (features accessed, interactions within the App, session duration)</li>
-                <li>Log data (IP address, access times, app crashes and diagnostics)</li>
+                <li>Log data (IP address, access times, app crashes and diagnostics via Sentry)</li>
+                <li>Analytics data (feature usage patterns via Mixpanel)</li>
             </ul>
 
             <h2>2. How We Use Your Information</h2>
@@ -89,7 +90,7 @@
             <ul>
                 <li>Provide, maintain, and improve the App and its features</li>
                 <li>Process your subscription and manage your account</li>
-                <li>Generate AI content based on your inputs and preferences</li>
+                <li>Generate AI characters, images, and videos based on your inputs (see Section 5 for details on third-party AI processing)</li>
                 <li>Respond to your support requests and communications</li>
                 <li>Send important notices about updates or changes to the App</li>
                 <li>Analyze usage patterns to improve user experience</li>
@@ -97,57 +98,87 @@
             </ul>
 
             <h2>3. Subscription & Payment Information</h2>
-            <p>Infu AI offers subscription-based access to premium features. All payments are processed through Apple's App Store. We do <strong>not</strong> collect, store, or have access to your credit card or payment information. All billing is managed by Apple according to their terms and privacy practices.</p>
+            <p>Infu AI offers subscription-based access to premium features. All payments are processed through Apple's App Store. We do <strong>not</strong> collect, store, or have access to your credit card or payment information. All billing is managed by Apple according to their terms and privacy practices. Subscription management, including RevenueCat, is used to track your subscription status only.</p>
 
             <h2>4. Data Sharing & Disclosure</h2>
             <p>We do <strong>not</strong> sell, trade, or rent your personal information to third parties. We may share information only in the following circumstances:</p>
             <ul>
-                <li><strong>Service providers:</strong> Trusted third-party services that assist us in operating the App (e.g., cloud hosting, analytics), bound by confidentiality obligations</li>
-                <li><strong>AI processing:</strong> Your inputs may be processed by third-party AI services to generate content. This data is used solely for content generation and is not retained for other purposes</li>
-                <li><strong>Legal requirements:</strong> When required by law, regulation, or legal process</li>
-                <li><strong>Safety:</strong> To protect the rights, safety, or property of our users or the public</li>
+                <li><strong>AI content generation (fal.ai):</strong> Character appearance details, generated image URLs, and scene/style descriptions are sent to fal.ai for the sole purpose of generating AI images and videos. See Section 5 for full details.</li>
+                <li><strong>Authentication & database (Supabase):</strong> Account information and app data are stored securely on Supabase cloud infrastructure.</li>
+                <li><strong>Subscription management (RevenueCat):</strong> Subscription status and purchase data are managed through RevenueCat to verify your plan.</li>
+                <li><strong>Crash reporting (Sentry):</strong> Anonymous crash logs and diagnostics are sent to Sentry to help us fix bugs and improve stability.</li>
+                <li><strong>Analytics (Mixpanel):</strong> Anonymous usage data is sent to Mixpanel to help us understand how users interact with the App.</li>
+                <li><strong>Legal requirements:</strong> When required by law, regulation, or legal process.</li>
+                <li><strong>Safety:</strong> To protect the rights, safety, or property of our users or the public.</li>
             </ul>
 
-            <h2>5. Data Retention</h2>
-            <p>We retain your personal information for as long as your account is active or as needed to provide you services. You may request deletion of your account and associated data at any time by contacting us at <strong>support@infuai.com</strong>.</p>
+            <h2>5. Third-Party AI Data Processing</h2>
+            <p>Infu AI uses <strong>fal.ai</strong>, a third-party AI service, to generate AI images and videos. When you use the App's generation features, the following data is sent to fal.ai:</p>
+            <p><strong>Data sent during character creation:</strong></p>
+            <ul>
+                <li>Character appearance attributes (gender, age, skin tone, face shape, eye color, hair color, hair length, hair type, body type, clothing style)</li>
+                <li>Additional character details (extras, interests, country) used to build the character description prompt</li>
+            </ul>
+            <p><strong>Data sent during photo generation:</strong></p>
+            <ul>
+                <li>Character avatar image URL (previously generated image used as a reference)</li>
+                <li>Scene description, expression, camera angle, and aspect ratio</li>
+                <li>Custom prompts (if you choose the custom scene option)</li>
+            </ul>
+            <p><strong>Data sent during video generation:</strong></p>
+            <ul>
+                <li>Character avatar image URL</li>
+                <li>Motion type, expression, and duration settings</li>
+                <li>Custom prompts (if provided)</li>
+            </ul>
+            <p><strong>How fal.ai processes your data:</strong></p>
+            <ul>
+                <li>fal.ai processes the above data <strong>solely</strong> to generate the requested AI content (images and videos).</li>
+                <li>fal.ai does <strong>not</strong> use your data for training AI models or for any purpose other than fulfilling your generation request.</li>
+                <li>Generated content is returned to the App and stored in your account.</li>
+                <li>For more information about fal.ai's data practices, please refer to <a href="https://fal.ai/privacy" style="color: var(--accent);">fal.ai's Privacy Policy</a>.</li>
+            </ul>
+            <p><strong>Your consent:</strong> Before any data is sent to fal.ai, the App will ask for your explicit consent through an in-app dialog. You may choose not to consent, in which case you will not be able to use the AI generation features. Your consent is stored locally on your device and can be managed through the App.</p>
 
-            <h2>6. Data Security</h2>
-            <p>We implement industry-standard security measures to protect your information, including encryption in transit and at rest. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+            <h2>6. Data Retention</h2>
+            <p>We retain your personal information for as long as your account is active or as needed to provide you services. Generated images and videos are stored in your account until you delete them. You may request deletion of your account and all associated data at any time by contacting us at <strong>support@infuai.com</strong>.</p>
 
-            <h2>7. Children's Privacy</h2>
+            <h2>7. Data Security</h2>
+            <p>We implement industry-standard security measures to protect your information, including encryption in transit (HTTPS/TLS) and at rest. Authentication tokens are stored securely on your device. However, no method of electronic transmission or storage is 100% secure, and we cannot guarantee absolute security.</p>
+
+            <h2>8. Children's Privacy</h2>
             <p>Infu AI is not intended for children under the age of 13 (or the applicable age of consent in your jurisdiction). We do not knowingly collect personal information from children. If we become aware that a child has provided us with personal data, we will take steps to delete such information promptly.</p>
 
-            <h2>8. Your Rights</h2>
+            <h2>9. Your Rights</h2>
             <p>Depending on your jurisdiction, you may have the right to:</p>
             <ul>
                 <li>Access, update, or delete your personal information</li>
                 <li>Object to or restrict the processing of your data</li>
                 <li>Request a portable copy of your data</li>
-                <li>Withdraw consent at any time</li>
+                <li>Withdraw consent for AI data processing at any time</li>
+                <li>Request information about what data has been shared with third parties</li>
             </ul>
             <p>To exercise any of these rights, please contact us at <strong>support@infuai.com</strong>.</p>
 
-            <h2>9. Third-Party Links & Services</h2>
+            <h2>10. Third-Party Links & Services</h2>
             <p>The App may contain links to third-party websites or services that are not owned or controlled by us. We are not responsible for the privacy practices of these third parties. We encourage you to review their privacy policies.</p>
 
-            <h2>10. Changes to This Policy</h2>
+            <h2>11. Changes to This Policy</h2>
             <p>We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last updated" date. Your continued use of the App after any changes constitutes acceptance of the updated policy.</p>
 
-            <h2>11. Contact Us</h2>
+            <h2>12. Contact Us</h2>
             <p>If you have any questions or concerns about this Privacy Policy, please contact us at:</p>
             <p><strong>Email:</strong> support@infuai.com</p>
         </div>
-
         <footer>
             <div class="footer-links">
                 <a href="index.html">Home</a>
-            <a href="blog.html">Blog</a>
                 <a href="blog.html">Blog</a>
                 <a href="privacy.html">Privacy Policy</a>
                 <a href="terms.html">Terms of Use</a>
                 <a href="mailto:support@infuai.com">Contact</a>
             </div>
-            <div class="copyright">© 2025 Infu AI. All rights reserved.</div>
+            <div class="copyright">&copy; 2026 Infu AI. All rights reserved.</div>
         </footer>
     </div>
 </body>
